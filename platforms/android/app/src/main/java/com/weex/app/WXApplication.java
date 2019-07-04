@@ -5,6 +5,7 @@ import android.app.Application;
 import com.weex.app.extend.ImageAdapter;
 import com.weex.app.extend.WXEventModule;
 import com.alibaba.weex.plugin.loader.WeexPluginContainer;
+import com.weex.app.module.MyModule;
 import com.weex.app.util.AppConfig;
 import com.taobao.weex.InitConfig;
 import com.taobao.weex.WXSDKEngine;
@@ -22,6 +23,7 @@ public class WXApplication extends Application {
     );
     try {
       WXSDKEngine.registerModule("event", WXEventModule.class);
+      WXSDKEngine.registerModule("myModule", MyModule.class);
     } catch (WXException e) {
       e.printStackTrace();
     }
