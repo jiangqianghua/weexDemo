@@ -34,7 +34,14 @@ See [How-to-create-your-own-template](https://github.com/weex-templates/How-to-c
 >>weexpack run android
 #编译
 >>weexpack build android
+#H5上运行
+>>weexpack run web 或者 weex run web
 #生成签名
 >>keytool -genkey -alias runan.keystore -keyalg RSA -validity 1000 -keystore runan.keystore
 #开始签名
 >>jarsigner -verbose -keystore runan.keystore -signedjar runan.apk app-release-unsigned.apk runan.keystore
+
+#编译
+npm run build
+参考链接
+https://www.cnblogs.com/flying--pig/p/7519591.html

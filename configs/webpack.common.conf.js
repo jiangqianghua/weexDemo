@@ -9,7 +9,8 @@ const vueWebTemp = helper.rootNode(config.templateDir);
 const hasPluginInstalled = fs.existsSync(helper.rootNode(config.pluginFilePath));
 const isWin = /^win/.test(process.platform);
 const weexEntry = {
-  'index': helper.root('entry.js')
+  'index': helper.root('entry.js'),
+  'login': helper.root('login.js')
 }
 
 const getEntryFileContent = (source, routerpath) => {
@@ -45,8 +46,13 @@ const getEntryFile = () => {
   const routerFile = path.join(vueWebTemp, config.routerFilePath)
   fs.outputFileSync(entryFile, getEntryFileContent(helper.root(config.entryFilePath), routerFile));
   fs.outputFileSync(routerFile, getRouterFileContent(helper.root(config.routerFilePath)));
+  const loginFilePath = 'login.js'
+  const loginFile = path.join(vueWebTemp, loginFilePath)
+  fs.outputFileSync(loginFile, getEntryFileContent(helper.root(loginFilePath), routerFile));
+  
   return {
-    index: entryFile
+    index: entryFile,
+	login: loginFile
   }
 }
 

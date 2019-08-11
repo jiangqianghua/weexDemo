@@ -120,6 +120,7 @@ public class WXPageActivity extends AbsWeexActivity implements
       getSupportActionBar().setTitle(url);
       getSupportActionBar().hide();
     }
+    //url = "http://g.tbcdn.cn/amte-fe/amte-resource/0.0.8/fast/show_2.js";
     loadUrl(url);
   }
 

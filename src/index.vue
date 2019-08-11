@@ -1,7 +1,5 @@
 <template>
   <div class="wrapper">
-    <image :src="logo" class="logo" />
-    <text class="greeting">The environment is ready!</text>
     <router-view/>
   </div>
 </template>
